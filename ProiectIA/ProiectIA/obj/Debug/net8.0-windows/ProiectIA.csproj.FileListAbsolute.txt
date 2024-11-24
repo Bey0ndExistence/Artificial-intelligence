@@ -1,0 +1,17 @@
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\bin\Debug\net8.0-windows\ProiectIA.exe
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\bin\Debug\net8.0-windows\ProiectIA.deps.json
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\bin\Debug\net8.0-windows\ProiectIA.runtimeconfig.json
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\bin\Debug\net8.0-windows\ProiectIA.dll
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\bin\Debug\net8.0-windows\ProiectIA.pdb
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.Form1.resources
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.csproj.GenerateResource.cache
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.AssemblyInfoInputs.cache
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.AssemblyInfo.cs
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.csproj.CoreCompileInputs.cache
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.dll
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\refint\ProiectIA.dll
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.pdb
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.genruntimeconfig.cache
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ref\ProiectIA.dll
+C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\obj\Debug\net8.0-windows\ProiectIA.Properties.Resources.resources

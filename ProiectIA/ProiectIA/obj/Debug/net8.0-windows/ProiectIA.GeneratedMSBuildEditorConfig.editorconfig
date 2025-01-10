@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProiectIA
-build_property.ProjectDir = C:\Users\M0L0\source\repos\ProiectIA\ProiectIA\
+build_property.ProjectDir = C:\Users\M0L0\Documents\GitHub\Artificial-intelligence\ProiectIA\ProiectIA\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

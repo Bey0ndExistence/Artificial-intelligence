@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\M0L0\\source\\repos\\ProiectIA\\ProiectIA\\ProiectIA.csproj": {}
+    "C:\\Users\\M0L0\\Documents\\GitHub\\Artificial-intelligence\\ProiectIA\\ProiectIA\\ProiectIA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\M0L0\\source\\repos\\ProiectIA\\ProiectIA\\ProiectIA.csproj": {
+    "C:\\Users\\M0L0\\Documents\\GitHub\\Artificial-intelligence\\ProiectIA\\ProiectIA\\ProiectIA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\M0L0\\source\\repos\\ProiectIA\\ProiectIA\\ProiectIA.csproj",
+        "projectUniqueName": "C:\\Users\\M0L0\\Documents\\GitHub\\Artificial-intelligence\\ProiectIA\\ProiectIA\\ProiectIA.csproj",
         "projectName": "ProiectIA",
-        "projectPath": "C:\\Users\\M0L0\\source\\repos\\ProiectIA\\ProiectIA\\ProiectIA.csproj",
+        "projectPath": "C:\\Users\\M0L0\\Documents\\GitHub\\Artificial-intelligence\\ProiectIA\\ProiectIA\\ProiectIA.csproj",
         "packagesPath": "C:\\Users\\M0L0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\M0L0\\source\\repos\\ProiectIA\\ProiectIA\\obj\\",
+        "outputPath": "C:\\Users\\M0L0\\Documents\\GitHub\\Artificial-intelligence\\ProiectIA\\ProiectIA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\M0L0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

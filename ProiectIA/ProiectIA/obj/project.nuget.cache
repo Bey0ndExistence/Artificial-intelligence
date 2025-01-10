@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "u7CRyiLgl1Y=",
+  "dgSpecHash": "QlexXluMTkc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\M0L0\\source\\repos\\ProiectIA\\ProiectIA\\ProiectIA.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\M0L0\\Documents\\GitHub\\Artificial-intelligence\\ProiectIA\\ProiectIA\\ProiectIA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\M0L0\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

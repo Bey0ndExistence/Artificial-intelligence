@@ -35,6 +35,8 @@
             btnAddSchedule = new Button();
             btnRunAlgorithm = new Button();
             hoursTextBox = new TextBox();
+            button1 = new Button();
+            btnAddUser = new Button();
             SuspendLayout();
             // 
             // calendar
@@ -57,12 +59,13 @@
             listSchedules.FormattingEnabled = true;
             listSchedules.Location = new Point(547, 197);
             listSchedules.Name = "listSchedules";
-            listSchedules.Size = new Size(321, 204);
+            listSchedules.Size = new Size(294, 204);
             listSchedules.TabIndex = 3;
+
             // 
             // btnAddSchedule
             // 
-            btnAddSchedule.Location = new Point(345, 239);
+            btnAddSchedule.Location = new Point(346, 303);
             btnAddSchedule.Name = "btnAddSchedule";
             btnAddSchedule.Size = new Size(121, 29);
             btnAddSchedule.TabIndex = 4;
@@ -72,7 +75,7 @@
             // 
             // btnRunAlgorithm
             // 
-            btnRunAlgorithm.Location = new Point(345, 274);
+            btnRunAlgorithm.Location = new Point(346, 338);
             btnRunAlgorithm.Name = "btnRunAlgorithm";
             btnRunAlgorithm.Size = new Size(121, 29);
             btnRunAlgorithm.TabIndex = 5;
@@ -82,10 +85,31 @@
             // 
             // hoursTextBox
             // 
-            hoursTextBox.Location = new Point(307, 197);
+            hoursTextBox.Location = new Point(307, 270);
             hoursTextBox.Name = "hoursTextBox";
             hoursTextBox.Size = new Size(198, 27);
             hoursTextBox.TabIndex = 6;
+            hoursTextBox.Text = "HH:MM-HH:MM";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(346, 373);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 28);
+            button1.TabIndex = 7;
+            button1.Text = "Load Schedule";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonLoadSchedule_Click;
+            // 
+            // btnAddUser
+            // 
+            btnAddUser.Location = new Point(25, 83);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.Size = new Size(94, 29);
+            btnAddUser.TabIndex = 8;
+            btnAddUser.Text = "Add User";
+            btnAddUser.UseVisualStyleBackColor = true;
+            btnAddUser.Click += btnAddUser_Click;
             // 
             // Form1
             // 
@@ -94,6 +118,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(871, 455);
+            Controls.Add(btnAddUser);
+            Controls.Add(button1);
             Controls.Add(hoursTextBox);
             Controls.Add(btnRunAlgorithm);
             Controls.Add(btnAddSchedule);
@@ -101,7 +127,7 @@
             Controls.Add(boxUsers);
             Controls.Add(calendar);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Free Time Finder - ForwardChecking";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -115,5 +141,7 @@
         private Button btnAddSchedule;
         private Button btnRunAlgorithm;
         private TextBox hoursTextBox;
+        private Button button1;
+        private Button btnAddUser;
     }
 }

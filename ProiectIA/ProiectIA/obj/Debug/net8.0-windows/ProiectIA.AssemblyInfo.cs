@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProiectIA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bfd6bc85e79c317509e493e3cfbd9c6088bb4e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProiectIA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProiectIA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

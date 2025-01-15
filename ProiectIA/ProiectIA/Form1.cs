@@ -15,22 +15,12 @@ namespace ProiectIA
         /// <summary>
         /// userAvailability[user][date] = List of (Start, End) intervals in TimeSpan
         /// </summary>
-        private Dictionary<string, Dictionary<DateTime, List<(TimeSpan Start, TimeSpan End)>>> userAvailability;
+        private Dictionary<string, Dictionary<DateTime, List<(TimeSpan Start, TimeSpan End)>>> userAvailability = new Dictionary<string, Dictionary<DateTime, List<(TimeSpan, TimeSpan)>>>();
 
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // Initialize empty. We won't add any default users.
-            userAvailability = new Dictionary<string, Dictionary<DateTime, List<(TimeSpan, TimeSpan)>>>();
-
-            // (Optional) allow multi-day selection
-            // calendar.MaxSelectionCount = 14;
-        }
-
      
         /// <summary>
         /// When the user clicks "Load Schedule":
@@ -64,8 +54,7 @@ namespace ProiectIA
                 //   "Bob": { ... },
                 //   ...
                 // }
-                var loadedData = JsonConvert
-                    .DeserializeObject<Dictionary<string, Dictionary<string, List<TimeSpanInterval>>>>(json);
+                var loadedData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, List<TimeSpanInterval>>>>(json);
 
                 if (loadedData == null)
                 {
@@ -123,8 +112,7 @@ namespace ProiectIA
                     {
                         foreach (var (start, end) in dayKvp.Value)
                         {
-                            listSchedules.Items.Add(
-                                $"{user} => {dayKvp.Key.ToShortDateString()} : {start:hh\\:mm}-{end:hh\\:mm}");
+                            listSchedules.Items.Add($"{user} => {dayKvp.Key.ToShortDateString()} : {start:hh\\:mm}-{end:hh\\:mm}");
                         }
                     }
                 }
@@ -144,8 +132,7 @@ namespace ProiectIA
         /// </summary>
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            string newUserName = Microsoft.VisualBasic
-                .Interaction.InputBox("Enter new user name:", "Add User", "");
+            string newUserName = Microsoft.VisualBasic.Interaction.InputBox("Enter new user name:", "Add User", "");
             // returns empty string if user cancels
 
             if (string.IsNullOrWhiteSpace(newUserName))
@@ -175,7 +162,12 @@ namespace ProiectIA
                 return;
             }
 
-            string user = boxUsers.SelectedItem.ToString();
+            string ?user = boxUsers.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(user))
+            {
+                MessageBox.Show("Please enter a valid name.");
+                return;
+            }
             DateTime selectedDay = calendar.SelectionStart;
 
             // e.g. "07:00-09:20"
@@ -200,8 +192,7 @@ namespace ProiectIA
             userAvailability[user][selectedDay].Add((start, end));
 
             // Show in listSchedules
-            listSchedules.Items.Add(
-                $"{user} => {selectedDay.ToShortDateString()} : {start:hh\\:mm}-{end:hh\\:mm}");
+            listSchedules.Items.Add($"{user} => {selectedDay.ToShortDateString()} : {start:hh\\:mm}-{end:hh\\:mm}");
         }
 
         /// <summary>
@@ -286,18 +277,18 @@ namespace ProiectIA
         ///   - Otherwise, pick the next user's domain and try each interval.
         ///     Intersect that interval with currentIntersection so far, reduce future users' domains, etc.
         /// </summary>
-        private List<(TimeSpan, TimeSpan)> ForwardChecking(
-            List<string> users,
-            Dictionary<string, List<(TimeSpan Start, TimeSpan End)>> domains,
-            int userIndex,
-            List<(TimeSpan, TimeSpan)> currentIntersection)
+        private List<(TimeSpan, TimeSpan)> ?ForwardChecking(List<string> users,
+                                                            Dictionary<string, List<(TimeSpan Start, TimeSpan End)>> domains, 
+                                                            int userIndex, 
+                                                            List<(TimeSpan, TimeSpan)> ?currentIntersection)
         {
-            if (userIndex == users.Count)
+            if (userIndex == users.Count)   // verified all users
                 return currentIntersection; // success
 
             string user = users[userIndex];
             var userDomain = domains[user];
-            if (userDomain.Count == 0)
+
+            if (userDomain.Count == 0) // There are no free days for a user. Don't ckeck further
                 return null; // fail
 
             foreach (var interval in userDomain)
@@ -333,11 +324,10 @@ namespace ProiectIA
         /// <summary>
         /// Reduce the domain of future users so they only keep intervals that overlap with assignedInterval.
         /// </summary>
-        private Dictionary<string, List<(TimeSpan, TimeSpan)>> ReduceDomains(
-            List<string> users,
-            Dictionary<string, List<(TimeSpan Start, TimeSpan End)>> domains,
-            int userIndex,
-            (TimeSpan Start, TimeSpan End) assignedInterval)
+        private Dictionary<string, List<(TimeSpan, TimeSpan)>> ReduceDomains( List<string> users, 
+                                                                              Dictionary<string, List<(TimeSpan Start, TimeSpan End)>> domains, 
+                                                                              int userIndex,
+                                                                              (TimeSpan Start, TimeSpan End) assignedInterval)
         {
             var newDomains = new Dictionary<string, List<(TimeSpan, TimeSpan)>>();
             foreach (var kvp in domains)
@@ -370,9 +360,9 @@ namespace ProiectIA
         /// Intersect a list of intervals (the current intersection) with a single interval.
         /// Return the portions that overlap.
         /// </summary>
-        private List<(TimeSpan Start, TimeSpan End)> IntersectListWithInterval(
-            List<(TimeSpan Start, TimeSpan End)> currentIntersection,
-            (TimeSpan Start, TimeSpan End) interval)
+        private List<(TimeSpan Start, TimeSpan End)> IntersectListWithInterval(List<(TimeSpan Start, TimeSpan End)> currentIntersection,
+                                                                               (TimeSpan Start, TimeSpan End) interval
+                                                                              )
         {
             var result = new List<(TimeSpan Start, TimeSpan End)>();
             foreach (var (cStart, cEnd) in currentIntersection)

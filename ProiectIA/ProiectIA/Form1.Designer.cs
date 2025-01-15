@@ -127,7 +127,6 @@
             Controls.Add(calendar);
             Name = "Form1";
             Text = "Timetabling";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

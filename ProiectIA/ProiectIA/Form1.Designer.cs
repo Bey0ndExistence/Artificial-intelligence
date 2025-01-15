@@ -61,7 +61,6 @@
             listSchedules.Name = "listSchedules";
             listSchedules.Size = new Size(294, 204);
             listSchedules.TabIndex = 3;
-
             // 
             // btnAddSchedule
             // 
@@ -127,7 +126,7 @@
             Controls.Add(boxUsers);
             Controls.Add(calendar);
             Name = "Form1";
-            Text = "Free Time Finder - ForwardChecking";
+            Text = "Timetabling";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
